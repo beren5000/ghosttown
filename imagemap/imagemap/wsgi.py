@@ -11,6 +11,13 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault("DJANGO_SETTINGS_MODULE", "imagemap.settings")
+try:
+    from rol import settings_name
+except ImportError:
+    settings_name = "settings"
+
+settings_var = "imagemap."+settings_name
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", settings_var)
 
 application = get_wsgi_application()
