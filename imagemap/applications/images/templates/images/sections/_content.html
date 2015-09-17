@@ -1,0 +1,93 @@
+{% load staticfiles %}
+{% load bootstrap3 %}
+<div class="row background_hexagon_header">
+    <div class="container ">
+        <div class="row ">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-7">
+                <img src="{% static 'ghosttown/img/Home-Logo.svg' %}" style="margin-top: -73px;margin-bottom: 40px;">
+            </div>
+            <div class="col-md-5">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-7 col-md-offset-3 home-help-title">
+                        obtén tu ciudadanía
+                    </div>
+                </div>
+                <img src="{% static 'ghosttown/img/Home-Form-IDband.svg' %}">
+                <div class="row">
+                    <div class="col-md-7 col-md-offset-3 home-help-text">
+                        Nosotros, los ciudadanos de
+                        la República de los
+                        fantasmas,
+                        en búsqueda de la libertad,
+                        constituimos una República
+                        donde las fronteras no
+                        existen,
+                        donde las nacionalidades no
+                        se imponen, se construyan,
+                        Un lugar donde todos los
+                        ciudadanos pudeiéramos
+                        participar y crear,
+                        Un lugar donde desaparecer
+                        es existir.
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <div class="row home-form-card">
+                    <div class="col-md-12 home-form-card-title ">
+                        republica de los fantasmas
+                    </div>
+                    <img src="{% static 'ghosttown/img/Home-Form-DecorativeTab.svg' %}" style="width: 580px;padding-right: 20px;padding-left: 20px;">
+                    <div class="col-md-12 home-form-card-sub-title">
+                        identificación personal
+                    </div>
+                    <div class="col-md-12 home-form-card-band">
+                        ciudadania virtual numero: X X X X X X X X
+                    </div>
+                    <form id="registerForm" method="post" action="{% url 'index' %}" class="form">
+                        {% csrf_token %}
+                        <div class="col-md-9 home-form-card-form">
+                            {{ user_profile_form }}
+                        </div>
+                        <div class="col-md-3 home-form-card-form">
+                        </div>
+                        <input type="submit" value="enviar">
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="row">
+
+</div>
+<div class="row">
+
+</div>
+<div class="row">
+
+</div>
+<div class="row">
+
+</div>

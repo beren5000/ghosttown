@@ -1,0 +1,72 @@
+{% load i18n %}
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>{% block title %}Republica de los fantasmas{% endblock %}</title>
+    <!-- start: META -->
+    <meta charset="utf-8"/>
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=EmulateIE7,chrome=1" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="" name="description"/>
+    <meta content="" name="author"/>
+    <!-- end: META -->
+    <!-- start: MAIN CSS -->
+    {% block css %}
+        {% include 'framing/css.html' %}
+    {% endblock %}
+
+    <!-- start: CSS REQUIRED FOR THIS PAGE ONLY -->
+    {% block extra_css %}
+    {% endblock extra_css %}
+    <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
+
+</head>
+<body>
+
+    <!-- start: NAVIGATION BAR -->
+    {% block navbar %}
+    {% endblock %}
+    <!-- end: NAVIGATION BAR -->
+
+        <!-- start: HEADER -->
+        {% block header %}
+            {% comment %}{% include  'sections/header.html' %}{% endcomment %}
+        {% endblock %}
+        <!-- end: HEADER -->
+        <!-- start: MAIN CONTAINER -->
+
+        <!-- start: PAGE -->
+        {% block content %}
+            {% comment %}{% include  'sections/content.html' %}{% endcomment %}
+        {% endblock %}
+        <!-- end: PAGE -->
+
+        <!-- end: MAIN CONTAINER -->
+
+        <!-- start: FOOTER -->
+        {% block footer %}
+            {% include 'sections/footer.html' %}
+        {% endblock %}
+        <!-- end: FOOTER -->
+
+        <!-- start: MAIN JAVASCRIPTS -->
+        {% block js %}
+            {% include 'framing/js.html' %}
+        {% endblock %}
+
+        {% block extra_js %}
+        {% endblock extra_js %}
+        <!-- end: MAIN JAVASCRIPTS -->
+
+        <!-- start: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+
+        <script>
+            $(document).ready(function () {
+            });
+        </script>
+
+        <!-- end: JAVASCRIPTS REQUIRED FOR THIS PAGE ONLY -->
+</body>
+<!-- end: BODY -->
+</html>
