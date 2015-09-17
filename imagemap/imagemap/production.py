@@ -26,10 +26,10 @@ TEMPLATES = [
 MEDIA_ROOT = '/home/beren5000/webapps/ghosttown_media'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_URL = 'http://beren5000.webfactional.com/media/'
+MEDIA_URL = 'http://http://www.republicadelosfantasmas.co/media/'
 # END MEDIA CONFIGURATION
 
 STATIC_ROOT = '/home/beren5000/webapps/ghosttown_static'
-STATIC_URL = 'http://beren5000.webfactional.com/static/'
+STATIC_URL = 'http://www.republicadelosfantasmas.co/static/'
 
 DEBUG = True
