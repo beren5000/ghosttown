@@ -1,0 +1,65 @@
+/*FUENTES
+
+font-family: 'Share Tech Mono', ;
+
+font-family: 'IM Fell Great Primer SC', serif;
+
+font-family: 'Montserrat', sans-serif;
+*/
+.background_hexagon_header{
+    background: url("../img/Home-Header-Hexagons.svg");
+    height: 170px;
+    background-color: #E3E3DD;
+}
+
+.home-help-title{
+    font-family: 'Share Tech Mono' ;
+    font-size: 18pt;
+    color: #8C7B74;
+    text-align: right;
+}
+
+.home-help-text{
+    font-family: 'Share Tech Mono' ;
+    font-size: 15pt;
+    color:  #5E615C;
+    text-align: right;
+}
+
+.home-form-card{
+    border-style: solid;
+    border-color: #5E615C ;
+    border-width: 3px;
+    height: 300px;
+}
+
+.home-form-card-title{
+    font-family: 'IM Fell Great Primer SC', serif;
+    font-size: 20pt;
+    color: #5E615C;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.home-form-card-sub-title{
+    font-family: 'IM Fell Great Primer SC', serif;
+    font-size: 15pt;
+    color: #5E615C;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.home-form-card-band{
+    font-family: 'IM Fell Great Primer SC', serif;
+    font-size: 15pt;
+    color: #8C7B74;
+    background-color:  #D3A682;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.home-form-card-form{
+    font-family: 'IM Fell Great Primer SC', serif;
+    color: #5E615C;
+}
