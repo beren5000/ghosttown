@@ -99,13 +99,33 @@
 <div class="row push-down-60">
     <div class="container">
         <div class="col-md-6">
-            <img src="{% static 'ghosttown/img/Seccion3-Title-HonorablesC.svg' %}">
+            <div class="row">
+                <img src="{% static 'ghosttown/img/Seccion3-Title-HonorablesC.svg' %}">
+            </div>
+            <div class="row">
+                <div class="col-md-12"></div>
+            </div>
         </div>
         <div class="col-md-6">
             <div class="row home-gallery">
                 {% for image in gallery %}
-                    <div class="col-md-4 thumb-home">
-                        <img src="{{ image.thumb_home }}" alt="{{ image.caption }}">
+                    <div class="col-md-4 thumb-home captionable">
+                        <img class="" src="{{ image.thumb_home }}" alt="{{ image.caption }}">
+
+                        <a data-toggle="modal" data-target="#myModal{{ image.id }}">
+                            <figcaption class="img-title">
+                                <h5>{{ image.caption }}</h5>
+                            </figcaption>
+                        </a>
+                    </div>
+                    <div class="modal fade modal-thumb-home" id="myModal{{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <img class="" src="{{ image.image.url }}" alt="{{ image.caption }}" width="100%">
+                          </div>
+                        </div>
+                      </div>
                     </div>
                 {% endfor %}
             </div>

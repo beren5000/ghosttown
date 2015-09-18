@@ -26,7 +26,7 @@ TEMPLATES = [
 MEDIA_ROOT = '/home/beren5000/webapps/ghosttown_media'
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#media-url
-MEDIA_URL = 'http://http://www.republicadelosfantasmas.co/media/'
+MEDIA_URL = 'http://www.republicadelosfantasmas.co/media/'
 # END MEDIA CONFIGURATION
 
 STATIC_ROOT = '/home/beren5000/webapps/ghosttown_static'

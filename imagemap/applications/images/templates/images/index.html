@@ -44,6 +44,14 @@ function centerMe(position) {
             $(".home-gallery").mCustomScrollbar({theme:'inset-dark'});
         });
     })(jQuery);
+$(document).ready( function() {
 
+    $('.captionable').hover( function() {
+        $(this).find('.img-title').fadeIn(300);
+    }, function() {
+        $(this).find('.img-title').fadeOut(100);
+    });
+
+});
     </script>
 {% endblock %}
