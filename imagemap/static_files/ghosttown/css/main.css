@@ -73,12 +73,35 @@ font-family: 'Montserrat', sans-serif;
     background-color: #83867E ;
 }
 
+.push-down-30 {
+    margin-top: 30px;
+}
+
 .push-down-60{
     margin-top: 60px;
 }
 
 .push-down-90{
     margin-top: 90px;
+}
+
+.home-avatars{
+    background-color: #DDCDB0;
+    height: 555px;
+    margin-top: 25px;
+}
+
+.hexagon{
+    width: 150px;
+    height: 160px;
+    background: #1e90ff;
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background: no-repeat center center;
 }
 
 .thumb-home{
@@ -144,6 +167,43 @@ font-family: 'Montserrat', sans-serif;
 {
 	background-color: #bababa;
 	border-radius: 6px;
+}
+
+.home-separator{
+    height: 100px;
+    background-color: #E3E3DD;
+}
+
+.home-text-ideology{
+    font-family: 'Share Tech Mono', sans-serif;
+    color: #5E615C;
+    padding: 10px;
+    font-size: 14pt;
+    text-align: justify;
+}
+
+.home-themes{
+    font-family: 'Share Tech Mono', sans-serif;
+    color: #5E615C;
+}
+
+.home-theme-title{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16pt;
+}
+
+.home-theme-text{
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14pt;
+}
+
+.home-themes hr{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 3px solid #eee;
 }
 
 .sponsors{

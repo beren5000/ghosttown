@@ -56,6 +56,10 @@ class UserProfile(Master):
         return im.url
 
     @property
+    def hexagon_avatar(self):
+        return self.show_thumb(150, 150)
+
+    @property
     def get_full_name(self):
         return self.user.get_full_name()
 

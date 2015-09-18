@@ -102,8 +102,16 @@
             <div class="row">
                 <img src="{% static 'ghosttown/img/Seccion3-Title-HonorablesC.svg' %}">
             </div>
-            <div class="row">
-                <div class="col-md-12"></div>
+            <div class="row home-avatars">
+                <div class="col-md-12">
+                    <div class="row push-down-30">
+                        {% for user_profile in user_profiles %}
+                            <div class="col-md-4">
+                                <img class="hexagon" src="{{ user_profile.hexagon_avatar }}">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-md-6">
@@ -133,6 +141,97 @@
     </div>
 
 </div>
-<div class="row">
+<div class="row push-down-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 home-separator"></div>
+        </div>
+    </div>
+</div>
 
+<div class="row push-down-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{% static 'ghosttown/img/Seccion4-Title-Ideologias.svg' %}">
+            </div>
+        </div>
+        <div class="row push-down-30">
+            <div class="col-md-12">
+                <p class="home-text-ideology">
+                    Cras auctor, arcu sed vulputate varius, nibh arcu laoreet risus, accumsan ullamcorper tortor tellus laoreet
+                    magna. Maecenas efficitur leo vel tellus iaculis pellentesque. Morbi dignissim tincidunt ipsum dapibus
+                    ullamcorper. Quisque ullamcorper vestibulum diam nec commodo. Maecenas pretium lacus et magna porttitor gravida.
+                    Phasellus imperdiet ligula lorem, eu porta enim laoreet a. Curabitur dignissim sit amet lectus tincidunt
+                    tristique. Ut elementum ac lectus eu aliquam. Aenean lectus metus, dictum ac convallis sit amet, laoreet quis
+                </p>
+            </div>
+        </div>
+        <div class="row push-down-60 home-themes">
+            <div class="col-md-3">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-1.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 1
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-2.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 2
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+            <div class="col-md-3 ">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-3.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 3
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-4.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 4
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+        </div>
+    </div>
 </div>
