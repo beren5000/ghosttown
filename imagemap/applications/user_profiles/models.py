@@ -1,3 +1,5 @@
+import importlib
+from random import randint
 from PIL import Image, ImageOps
 from datetime import datetime
 from django.db import models
@@ -7,10 +9,17 @@ from utils.utils import Master
 from django.utils.translation import ugettext_lazy as _
 from sorl.thumbnail import get_thumbnail
 
+try:
+    from rol import settings_name
+except ImportError:
+    settings_name = "settings"
+
+settings_var = "imagemap."+settings_name
+settings = importlib.import_module(settings_var)
+
 GENDER_CHOICES = (
-    (0, _("male")),
-    (1, _("female")),
-    (2, _("gender_other")),
+    (0, _("masculino")),
+    (1, _("femenino")),
 )
 
 
@@ -57,7 +66,11 @@ class UserProfile(Master):
 
     @property
     def hexagon_avatar(self):
-        return self.show_thumb(150, 150)
+        if self.avatar:
+            return self.show_thumb(150, 150)
+        rand = str(randint(1,4))
+        return settings.STATIC_URL+"ghosttown/img/Seccion4-IconExample-"+rand+".svg"
+
 
     @property
     def get_full_name(self):

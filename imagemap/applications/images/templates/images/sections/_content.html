@@ -46,36 +46,138 @@
                 </div>
 
             </div>
-            <div class="col-md-6">
-                <div class="row home-form-card">
-                    <div class="col-md-12 home-form-card-title ">
-                        republica de los fantasmas
-                    </div>
-                    <img src="{% static 'ghosttown/img/Home-Form-DecorativeTab.svg' %}" style="width: 580px;padding-right: 20px;padding-left: 20px;">
-                    <div class="col-md-12 home-form-card-sub-title">
-                        identificación personal
-                    </div>
-                    <div class="col-md-12 home-form-card-band">
-                        ciudadania virtual numero: X X X X X X X X
-                    </div>
-                    <form id="registerForm" method="post" action="{% url 'index' %}" class="form">
-                        {% csrf_token %}
-                        <div class="col-md-9 home-form-card-form">
-                            {{ user_profile_form }}
-                        </div>
-                        <div class="col-md-3 home-form-card-form">
-                        </div>
-                        <input type="submit" value="enviar">
-                    </form>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+<!--HOME REGISTER CARD-->
+            <form id="registerForm" method="post" enctype='multipart/form-data' action="{% url 'index' %}" class="form">
+                {% csrf_token %}
+                {{ user_profile_form.form_name }}
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row home-form-card">
+                                <div class="col-md-12 home-form-card-title ">
+                                    republica de los fantasmas
+                                </div>
+                                <img src="{% static 'ghosttown/img/Home-Form-DecorativeTab.svg' %}" style="width: 580px;padding-right: 20px;padding-left: 20px;">
+                                <div class="col-md-12 home-form-card-sub-title">
+                                    identificación personal
+                                </div>
+                                <div class="col-md-12 home-form-card-band">
+                                    ciudadania virtual numero: <span id="id_citizen">{{ user_name }}</span>
+                                </div>
+                                <div class="col-md-9 home-form-card-form">
+                                    {% comment %}{{ user_profile_form }}{% endcomment %}
+                                    <div class="row push-down-10">
+                                        <div class="col-md-6">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.first_names.errors.as_text }}" for="id_first_names">Nombres:</label>
+                                            {% if user.is_authenticated %}
+                                                {{ user_profile_form.instance.first_name }}
+                                            {% else %}
+                                                {{ user_profile_form.first_names }}
+                                            {% endif %}
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.last_names.errors.as_text }}" for="id_last_names">Apellidos:</label>
+                                            {% if user.is_authenticated %}
+                                                {{ user_profile_form.instance.last_name }}
+                                            {% else %}
+                                                {{ user_profile_form.last_names }}
+                                            {% endif %}
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    {% if not user.is_authenticated %}
+                                    <div class="row push-down-10">
+                                        <div class="col-md-6">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.password1.errors.as_text }}" for="id_password1">Contraseña:</label>
+                                            {{ user_profile_form.password1 }}
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.password2.errors.as_text }}" for="id_password2">Confirmar:</label>
+                                            {{ user_profile_form.password2 }}
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                    <div class="row push-down-10">
+                                        <div class="col-md-6">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.birth_date.errors.as_text }}" for="id_birth_date">Cumpleaños:</label>
+                                            {% if user.is_authenticated %}
+                                                {{ user_profile_form.instance.birth_date }}
+                                            {% else %}
+                                                {{ user_profile_form.birth_date }}
+                                            {% endif %}
+                                            <hr>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.gender.errors.as_text }}" for="id_gender">Genero:</label>
+                                            {% if user.is_authenticated %}
+                                                {{ user_profile_form.instance.gender_unicode }}
+                                            {% else %}
+                                                {{ user_profile_form.gender }}
+                                            {% endif %}
+                                            <hr>
+                                        </div>
+                                    </div>
+                                    <div class="row push-down-10">
+                                        <div class="col-md-12">
+                                            <label data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.email.errors.as_text }}" for="id_email">E-Mail:</label>
+                                            {% if user.is_authenticated %}
+                                                {{ user_profile_form.instance.email }}
+                                            {% else %}
+                                                {{ user_profile_form.email }}
+                                            {% endif %}
+                                            <hr>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 home-form-card-form">
+                                    <label id="label_avatar" data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.avatar.errors.as_text }}" for="id_avatar">avatar:</label>
+                                    {% if user.is_authenticated %}
+                                        <img id="imagePreview" src="{{ user_profile_form.instance.avatar.url }}">
+                                    {% else %}
+                                        <div id="imagePreview"></div>
+                                        {{ user_profile_form.avatar }}
+                                    {% endif %}
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row push-down-30">
+                        {% if not user.is_authenticated %}
+                            <button id="btn-im-citizen" type="button" data-toggle="modal" data-target="#reg-modal" class="">YA SOY CIUDADANO</button>
+                            <!-- Modal -->
+                            <button id="btn-send-my-request" type="submit" class="">ENVIAR MI SOLICITUD</button>
+                        {% else %}
+                            <a href="{% url 'logout' %}"><button id="btn-send-my-request" type="button" class="">SALIR</button></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </form>
+            <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="regModalLabel">Modal title</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form id="login-form"  method="post" action="{% url 'index' %}"  class="form">
+                                {% csrf_token %}
+                                {{ login_form }}
+                                <button id="btn-send-my-request" type="submit" class="">INGRESAR</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
                     </div>
                 </div>
             </div>
-
-
+<!--end home register card-->
         </div>
     </div>
 </div>

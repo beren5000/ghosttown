@@ -64,6 +64,84 @@ font-family: 'Montserrat', sans-serif;
     color: #5E615C;
 }
 
+.home-form-card-form hr {
+    margin-top: 0;
+    margin-bottom: 0;
+    border: 0;
+    border-top: 3px solid #888;
+}
+
+#id_first_names{
+    width: 105px;
+    border: none;
+}
+#id_last_names{
+    width: 105px;
+    border: none;
+}
+
+#id_password1{
+    width: 105px;
+    border: none;
+}
+#id_password2{
+    width: 105px;
+    border: none;
+}
+
+#id_birth_date{
+    width: 105px;
+    border: none;
+}
+#id_gender{
+    width: 105px;
+    border: none;
+}
+#id_email{
+    width: 330px;
+    border: none;
+}
+
+#label_avatar{
+    margin-top: 10px;
+}
+
+#btn-send-my-request{
+    margin-left: 20px;
+    float: right;
+    border: 0;
+    color: #FFFFFF;
+    border-radius: 0;
+    width: 280px;
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16pt;
+    background-color: #D3A682;
+
+}
+#btn-im-citizen{
+    color: #FFFFFF;
+    border: 0;
+    border-radius: 0;
+    width: 280px;
+    height: 60px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16pt;
+    background-color: #B0B5C5;
+
+}
+
+
+#imagePreview {
+    cursor: pointer;
+    width: 105px;
+    height: 105px;
+    background: url("../img/Home-Form-Icon-AddPhoto.svg") center center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    display: inline-block;
+}
+
 #map{
     width: 100%;
     height: 700px;
@@ -71,6 +149,10 @@ font-family: 'Montserrat', sans-serif;
 
 .home-constructions-title{
     background-color: #83867E ;
+}
+
+.push-down-10{
+    margin-top: 10px;
 }
 
 .push-down-30 {

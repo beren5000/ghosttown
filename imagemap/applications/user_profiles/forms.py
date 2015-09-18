@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from random import randint
 from django import forms
 from django.contrib.auth import authenticate
@@ -8,6 +9,7 @@ from applications.user_profiles.models import UserProfile
 
 
 class AuthenticationForm(AuthenticationForm):
+    form_name = forms.CharField(initial='login_form', widget=forms.HiddenInput)
     remember_me = forms.BooleanField(widget=forms.CheckboxInput(), required=False, label=_("remember_me"))
 
 
@@ -22,19 +24,27 @@ class UserProfileCreationForm(forms.ModelForm):
         'username_has_whitespaces': _("The username can't contain whitespaces."),
     }
     #username = forms.CharField(label=_("Username"))
+    form_name = forms.CharField(initial='register_form', widget=forms.HiddenInput)
     email = forms.EmailField(label=_("email"))
-    first_names = forms.CharField(label=_("first_names"))
-    last_names = forms.CharField(label=_("last_names"))
-    password1 = forms.CharField(label=_("Password"),
+    first_names = forms.CharField(label=_("Nombres"))
+    last_names = forms.CharField(label=_("Apellidos"))
+    password1 = forms.CharField(label=_("Contraseña"),
                                 widget=forms.PasswordInput)
-    password2 = forms.CharField(label=_("Password confirmation"),
+    password2 = forms.CharField(label=_("Confirma la Contraseña"),
                                 widget=forms.PasswordInput,
                                 help_text=_("Enter the same password as above, for verification."))
-    conditions = forms.BooleanField(label="", required=True, help_text=_("i have read the terms and conditions"))
+    #conditions = forms.BooleanField(label="", required=True, help_text=_("i have read the terms and conditions"))
 
     class Meta:
         model = UserProfile
-        fields = ["first_names", "last_names", "password1", "password2", "email", "conditions"]
+        fields = ["first_names",
+                  "last_names",
+                  "password1",
+                  "password2",
+                  "gender",
+                  "birth_date",
+                  "email",
+                  "avatar"]
 
     def clean_password2(self):
         password1 = self.cleaned_data.get("password1")
@@ -70,7 +80,6 @@ class UserProfileCreationForm(forms.ModelForm):
         user.first_name = first_names
         user.last_name = last_names
         if commit:
-            user_profile.save()
             user.save()
             user_profile.user = user
             user_profile.save()
