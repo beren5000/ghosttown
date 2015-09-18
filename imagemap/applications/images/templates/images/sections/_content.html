@@ -135,7 +135,7 @@
                                 <div class="col-md-3 home-form-card-form">
                                     <label id="label_avatar" data-toggle="tooltip" data-placement="top" title="{{ user_profile_form.avatar.errors.as_text }}" for="id_avatar">avatar:</label>
                                     {% if user.is_authenticated %}
-                                        <img id="imagePreview" src="{{ user_profile_form.instance.avatar.url }}">
+                                        <img id="imagePreview" src="{{ user_profile_form.instance.hexagon_avatar }}">
                                     {% else %}
                                         <div id="imagePreview"></div>
                                         {{ user_profile_form.avatar }}
