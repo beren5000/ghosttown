@@ -63,3 +63,71 @@ font-family: 'Montserrat', sans-serif;
     font-family: 'IM Fell Great Primer SC', serif;
     color: #5E615C;
 }
+
+#map{
+    width: 100%;
+    height: 700px;
+}
+
+.home-constructions-title{
+    background-color: #83867E ;
+}
+
+.push-down-60{
+    margin-top: 60px;
+}
+
+.push-down-90{
+    margin-top: 90px;
+}
+
+.sponsors{
+    border-top-color: #E3E3DD;
+    border-top-width: 5pt;
+    border-top-style: solid;
+    color:#5E615C;
+    font-family: 'Share Tech Mono', sans-serif ;
+    font-size: 18pt;
+}
+
+.logo-sponsors-space{
+    position: relative;
+    line-height: 300px;
+    height:300px;
+}
+
+.logo-sponsors{
+    position: relative;
+    display: inline;
+    vertical-align: middle;
+}
+
+.footer{
+    background-color: #5E615C;
+    border-top-color: #E3E3DD;
+    border-top-width: 5pt;
+    border-top-style: solid;
+    border-bottom-color: #E3E3DD;
+    border-bottom-width: 10pt;
+    border-bottom-style: solid;
+}
+
+.footer-contact{
+    display: table !important;
+    height: 300px;
+    width: 100%;
+}
+
+.footer-contact-text{
+    display: table-cell !important;
+    font-family: 'Share Tech Mono', sans-serif;
+    font-size: 14pt;
+    color: #FFFFFF;
+    vertical-align: middle;
+}
+
+.footer-social-images{
+    width: 90%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

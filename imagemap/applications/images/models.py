@@ -23,3 +23,12 @@ class UploadedImages(Master):
     class Meta:
         verbose_name = _("uploaded_image")
         verbose_name_plural = _("uploaded_images")
+
+
+class Images(Master):
+    image = models.ImageField(blank=True, null=True, upload_to=image_name, verbose_name=_("image"))
+    caption = models.CharField(max_length=50, blank=True, null=True, verbose_name=_("caption"))
+
+    class Meta:
+        verbose_name = _("Image")
+        verbose_name_plural = _("Images")

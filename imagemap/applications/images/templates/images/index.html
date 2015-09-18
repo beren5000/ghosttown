@@ -2,6 +2,43 @@
 {% load i18n %}
 {% load staticfiles %}
 {% block title %}Republica de los Fantasmas{% endblock %}
+
 {% block content %}
     {% include  'images/sections/_content.html' %}
+{% endblock %}
+
+{% block footer %}
+    {% include  'sections/footer.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript">
+
+var map;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: 3.4511595, lng: -76.5145283},
+    zoom: 13
+  });
+}
+
+    function grabMyPosition() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(centerMe);
+    } else {
+        alert("You don't support this");
+    }
+}
+function centerMe(position) {
+    var coords = new google.maps.LatLng(
+        position.coords.latitude,
+        position.coords.longitude
+    );
+
+    map.setCenter(coords);
+    // or
+    map.panTo(coords);
+}
+
+    </script>
 {% endblock %}

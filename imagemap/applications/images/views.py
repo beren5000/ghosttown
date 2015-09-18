@@ -1,6 +1,7 @@
 import random
 from django.shortcuts import render, render_to_response
 from django.template import RequestContext
+from applications.images.models import Images
 from applications.user_profiles.forms import UserProfileCreationForm
 from applications.user_profiles.models import UserProfile
 
@@ -18,6 +19,8 @@ def index_view(request):
         if user_profile_form.is_valid():
             user_profile_form.save()
             data["user_profile_form"] = user_profile_form
+
+    data["gallery"] = Images.objects.filter(is_active=True)
     return render_to_response('images/index.html',
                               data,
                               context_instance=RequestContext(request))
