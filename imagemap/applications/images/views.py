@@ -21,6 +21,7 @@ def index_view(request):
             data["user_profile_form"] = user_profile_form
 
     data["gallery"] = Images.objects.filter(is_active=True)
+
     return render_to_response('images/index.html',
                               data,
                               context_instance=RequestContext(request))

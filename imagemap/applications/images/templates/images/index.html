@@ -39,6 +39,11 @@ function centerMe(position) {
     // or
     map.panTo(coords);
 }
+(function($){
+        $(window).load(function(){
+            $(".home-gallery").mCustomScrollbar({theme:'inset-dark'});
+        });
+    })(jQuery);
 
     </script>
 {% endblock %}

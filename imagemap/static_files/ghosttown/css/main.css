@@ -81,6 +81,34 @@ font-family: 'Montserrat', sans-serif;
     margin-top: 90px;
 }
 
+.thumb-home{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.home-gallery{
+    margin-top: -15px;
+    height: 750px;
+    overflow-y: scroll;
+}
+
+.home-gallery::-webkit-scrollbar-track
+{
+	background-color: #ffffff;
+}
+
+.home-gallery::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.home-gallery::-webkit-scrollbar-thumb
+{
+	background-color: #bababa;
+	border-radius: 6px;
+}
+
 .sponsors{
     border-top-color: #E3E3DD;
     border-top-width: 5pt;
@@ -124,6 +152,16 @@ font-family: 'Montserrat', sans-serif;
     font-size: 14pt;
     color: #FFFFFF;
     vertical-align: middle;
+}
+
+.footer> a:focus, a:hover {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.footer a {
+    color: #FFFFFF;
+    text-decoration: none;
 }
 
 .footer-social-images{
