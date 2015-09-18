@@ -159,20 +159,47 @@
             <div class="modal fade" id="reg-modal" tabindex="-1" role="dialog" aria-labelledby="regModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="regModalLabel">Modal title</h4>
-                        </div>
-                        <div class="modal-body">
+                        <div class="modal-body home-form-card-form home-form-card">
                             <form id="login-form"  method="post" action="{% url 'index' %}"  class="form">
-                                {% csrf_token %}
-                                {{ login_form }}
-                                <button id="btn-send-my-request" type="submit" class="">INGRESAR</button>
+                                <div class="row">
+                                    {% csrf_token %}
+                                    {{ login_form.form_name }}
+                                    <div class="col-md-12 home-form-card-title ">
+                                        republica de los fantasmas
+                                    </div>
+                                    <img src="{% static 'ghosttown/img/Home-Form-DecorativeTab.svg' %}" style="width: 580px;padding-right: 20px;padding-left: 20px; margin-bottom: 35px;">
+                                    <div class="col-md-12">
+                                        {% if login_form.errors %}
+                                            {{ login_form.errors.as_text }}
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label data-toggle="tooltip" data-placement="top" title="{{ login_form.username.errors.as_text }}" for="id_username">Id de Ciudadano:</label>
+                                        {{ login_form.username }}
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label data-toggle="tooltip" data-placement="top" title="{{ login_form.password.errors.as_text }}" for="id_password">Contraseña:</label>
+                                        {{ login_form.password }}
+                                    </div>
+                                    <div class="col-md-12" style="text-align: center;margin-top: 10px;">
+                                        <label data-toggle="tooltip" data-placement="top" title="{{ login_form.remember_me.errors.as_text }}" for="id_password">Recuerdame:</label>
+                                        {{ login_form.remember_me }}
+                                    </div>
+                                </div>
+                                <div class="row" style="margin-top: 10px;">
+                                    <div class="col-md-12">
+                                        <button id="btn-send-my-request" type="submit" class="">INGRESAR</button>
+                                    </div>
+                                </div>
+                                {% if login_form.errors %}
+                                    <script type="text/javascript">
+                                        $(window).load(function(){
+                                            $('#reg-modal').modal('show');
+                                            $('label').tooltip('show')
+                                        });
+                                    </script>
+                                {% endif %}
                             </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
                     </div>
                 </div>
