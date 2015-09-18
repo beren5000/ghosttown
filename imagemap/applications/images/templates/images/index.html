@@ -42,6 +42,7 @@ function centerMe(position) {
 (function($){
         $(window).load(function(){
             $(".home-gallery").mCustomScrollbar({theme:'inset-dark'});
+            $(".home-avatars").mCustomScrollbar({theme:'inset-dark'});
         });
     })(jQuery);
 $(document).ready( function() {
@@ -52,7 +53,7 @@ $(document).ready( function() {
         $(this).find('.img-title').fadeOut(100);
     });
 
-    $('label').tooltip('show')
+    $('label').tooltip('show');
 
  //for avatar
     $(function() {
@@ -63,10 +64,10 @@ $(document).ready( function() {
             minDate: "-100Y",
             maxDate: "-17Y"
         });
-        $("#id_avatar").hide()
+        $("#id_avatar").hide();
         $("#imagePreview").on('click',function(){
             $("#id_avatar").click();
-        })
+        });
         $("#id_avatar").on("change", function()
         {
             var files = !!this.files ? this.files : [];

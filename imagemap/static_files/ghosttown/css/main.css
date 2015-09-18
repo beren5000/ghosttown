@@ -81,16 +81,16 @@ font-family: 'Montserrat', sans-serif;
 }
 
 #id_password1{
-    width: 105px;
+    width: 100px;
     border: none;
 }
 #id_password2{
-    width: 105px;
+    width: 100px;
     border: none;
 }
 
 #id_birth_date{
-    width: 105px;
+    width: 100px;
     border: none;
 }
 #id_gender{
@@ -171,6 +171,7 @@ font-family: 'Montserrat', sans-serif;
     background-color: #DDCDB0;
     height: 555px;
     margin-top: 25px;
+    overflow-y: scroll;
 }
 
 .hexagon{
