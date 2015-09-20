@@ -111,9 +111,11 @@
                 <img src="{% static 'ghosttown/img/Seccion2-Title-construcciones.svg' %}" style="margin-top: 45px;margin-bottom: 45px;">
             </div>
             <div class="col-md-6">
-                <a href="{% url 'image_map_view' %}">
-                     <button id="btn-build" type="button" data-toggle="modal" data-target="#map-modal" class="">construye</button>
-                </a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'image_map_view' %}">
+                         <button id="btn-build" type="button" data-toggle="modal" data-target="#map-modal" class="">construye</button>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>

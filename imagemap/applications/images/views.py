@@ -1,12 +1,13 @@
 # -*- coding: utf-8 -*-
 import random
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response, redirect
 from django.template import RequestContext
 from applications.images.forms import AddMarkForm
-from applications.images.models import Images
+from applications.images.models import Images, UploadedImages
 from applications.user_profiles.forms import UserProfileCreationForm, AuthenticationForm
 from applications.user_profiles.models import UserProfile
 
@@ -57,16 +58,32 @@ def index_view(request):
             data["login_form"] = login_form
 
     data["gallery"] = Images.objects.filter(is_active=True)
+    data["marks"] = UploadedImages.objects.filter(is_active=True)
     data["user_profiles"] = UserProfile.objects.filter(is_active=True)
 
     return render_to_response('images/index.html',
                               data,
                               context_instance=RequestContext(request))
 
-
+@login_required
 def image_map_view(request):
-    data = {}
-    data["map_form"] = AddMarkForm()
+    data = dict()
+    user_profile = UserProfile.objects.get(user__id=request.user.id)
+    try:
+        mark = UploadedImages.objects.latest('created')
+        map_form = AddMarkForm(instance=mark)
+    except UploadedImages.DoesNotExist:
+        map_form = AddMarkForm()
+
+    if request.method == 'POST':
+        map_form = AddMarkForm(request.POST, request.FILES)
+        if map_form.is_valid():
+            mark = map_form.save()
+            mark.user_profile = user_profile
+            mark.save()
+            map_form = AddMarkForm(instance=mark)
+
+    data["map_form"] = map_form
     return render_to_response('images/addImage.html',
                               data,
                               context_instance=RequestContext(request))

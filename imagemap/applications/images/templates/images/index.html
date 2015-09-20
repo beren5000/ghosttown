@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load i18n %}
+{% load l10n %}
 {% load staticfiles %}
 {% block title %}Republica de los Fantasmas{% endblock %}
 
@@ -17,11 +18,29 @@
 
 var map;
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    scrollwheel: false,
-    center: {lat: 3.4511595, lng: -76.5145283},
-    zoom: 13
-  });
+    map = new google.maps.Map(document.getElementById('map'), {
+        scrollwheel: false,
+        center: {lat: 3.4511595, lng: -76.5145283},
+        zoom: 13
+    });
+    var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+    {% for mark in marks %}
+        var contentString{{ forloop.counter }} = '<img src="{{ mark.image.url }}" width="10px">';
+        var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
+            content: contentString{{ forloop.counter }}
+          });
+        var marker{{ forloop.counter }} = new google.maps.Marker({
+            position: {lat: {{ mark.position.latitude|unlocalize }}, lng: {{ mark.position.longitude|unlocalize }}},
+            map: map,
+            icon: iconBase + 'schools_maps.png',
+            title: 'Hello World!'
+        });
+
+        marker{{ forloop.counter }}.addListener('mouseover', function() {
+            infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
+          });
+
+    {% endfor %}
 }
 
     function grabMyPosition() {
