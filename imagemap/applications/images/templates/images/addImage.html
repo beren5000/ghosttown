@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load staticfiles %}
+{% block title %}Republica de los Fantasmas{% endblock %}
+
+{% block content %}
+    {% include  'images/sections/_addImageMap.html' %}
+{% endblock %}
+
+{% block footer %}
+    {% include  'sections/footer.html' %}
+{% endblock %}
+
+{% block extra_js %}
+    <script type="text/javascript">
+(function($){
+        $(window).load(function(){
+            /*$(".home-gallery").mCustomScrollbar({theme:'inset-dark'});*/
+        });
+    })(jQuery);
+$(document).ready( function() {
+
+
+});
+    </script>
+{% endblock %}

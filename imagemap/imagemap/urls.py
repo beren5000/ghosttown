@@ -16,12 +16,13 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls import include, url
 from django.contrib import admin
-from applications.images.views import index_view, logout_view
+from applications.images.views import index_view, logout_view, image_map_view
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^logout/$', logout_view, name='logout'),
     url(r'^$', index_view, name='index'),
+    url(r'^building/$', image_map_view, name='image_map_view'),
 
     url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT, }),
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, }),

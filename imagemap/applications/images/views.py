@@ -5,6 +5,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response, redirect
 from django.template import RequestContext
+from applications.images.forms import AddMarkForm
 from applications.images.models import Images
 from applications.user_profiles.forms import UserProfileCreationForm, AuthenticationForm
 from applications.user_profiles.models import UserProfile
@@ -59,5 +60,13 @@ def index_view(request):
     data["user_profiles"] = UserProfile.objects.filter(is_active=True)
 
     return render_to_response('images/index.html',
+                              data,
+                              context_instance=RequestContext(request))
+
+
+def image_map_view(request):
+    data = {}
+    data["map_form"] = AddMarkForm()
+    return render_to_response('images/addImage.html',
                               data,
                               context_instance=RequestContext(request))

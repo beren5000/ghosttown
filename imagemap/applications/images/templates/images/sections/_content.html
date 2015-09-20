@@ -2,22 +2,178 @@
 {% load bootstrap3 %}
 <div class="row background_hexagon_header">
     <div class="container ">
-        <div class="row ">
+        <div class="row">
+            <div class="col-md-7">
+                <img src="{% static 'ghosttown/img/Home-Logo.svg' %}" style="margin-top: 75px;margin-bottom: -90px;z-index: 1;position: absolute;">
+            </div>
+            <div class="col-md-5">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-12">
+        <div id="map"></div>
+    </div>
+</div>
+
+<div class="row push-down-30">
+    <div class="container">
+        <div class="row">
             <div class="col-md-12">
+                <img src="{% static 'ghosttown/img/Seccion4-Title-Ideologias.svg' %}">
+            </div>
+        </div>
+        <div class="row push-down-30">
+            <div class="col-md-12">
+                <p class="home-text-ideology">
+                    Cras auctor, arcu sed vulputate varius, nibh arcu laoreet risus, accumsan ullamcorper tortor tellus laoreet
+                    magna. Maecenas efficitur leo vel tellus iaculis pellentesque. Morbi dignissim tincidunt ipsum dapibus
+                    ullamcorper. Quisque ullamcorper vestibulum diam nec commodo. Maecenas pretium lacus et magna porttitor gravida.
+                    Phasellus imperdiet ligula lorem, eu porta enim laoreet a. Curabitur dignissim sit amet lectus tincidunt
+                    tristique. Ut elementum ac lectus eu aliquam. Aenean lectus metus, dictum ac convallis sit amet, laoreet quis
+                </p>
+            </div>
+        </div>
+        <div class="row push-down-60 home-themes">
+            <div class="col-md-3">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-1.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 1
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-2.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 2
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+            <div class="col-md-3 ">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-3.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 3
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <div class="home-glass-image">
+                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-4.svg' %}">
+                </div>
+                <div class="home-theme-title">
+                    TEMA 4
+                </div>
+                <hr>
+                <p class="home-theme-text">
+                    Cras auctor, arcu sed
+                    vulputate varius, nibh
+                    arcu laoreet risus,
+                    accumsan ullamcorper
+                    tortor tellus laoreet.
+                </p>
             </div>
         </div>
     </div>
 </div>
 
-<div class="row">
+<div class="row home-constructions-title">
     <div class="container">
-        <div class="row">
-            <div class="col-md-7">
-                <img src="{% static 'ghosttown/img/Home-Logo.svg' %}" style="margin-top: -73px;margin-bottom: 40px;">
+        <div class="row ">
+            <div class="col-md-6">
+                <img src="{% static 'ghosttown/img/Seccion2-Title-construcciones.svg' %}" style="margin-top: 45px;margin-bottom: 45px;">
             </div>
-            <div class="col-md-5">
+            <div class="col-md-6">
+                <a href="{% url 'image_map_view' %}">
+                     <button id="btn-build" type="button" data-toggle="modal" data-target="#map-modal" class="">construye</button>
+                </a>
             </div>
         </div>
+    </div>
+</div>
+<div class="row push-down-60">
+    <div class="container">
+        <div class="col-md-6">
+            <div class="row">
+                <img src="{% static 'ghosttown/img/Seccion3-Title-HonorablesC.svg' %}">
+            </div>
+            <div class="row home-avatars">
+                <div class="col-md-12">
+                    <div class="row push-down-30">
+                        {% for user_profile in user_profiles %}
+                            <div class="col-md-4">
+                                <img class="hexagon" src="{{ user_profile.hexagon_avatar }}">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="row home-gallery">
+                {% for image in gallery %}
+                    <div class="col-md-4 thumb-home captionable">
+                        <img class="" src="{{ image.thumb_home }}" alt="{{ image.caption }}">
+
+                        <a data-toggle="modal" data-target="#myModal{{ image.id }}">
+                            <figcaption class="img-title">
+                                <h5>{{ image.caption }}</h5>
+                            </figcaption>
+                        </a>
+                    </div>
+                    <div class="modal fade modal-thumb-home" id="myModal{{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <img class="" src="{{ image.image.url }}" alt="{{ image.caption }}" width="100%">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="row push-down-30">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 home-separator"></div>
+        </div>
+    </div>
+</div>
+
+<div class="row  push-down-90">
+    <div class="container">
         <div class="row">
             <div class="col-md-6">
                 <div class="row">
@@ -62,7 +218,7 @@
                                     identificación personal
                                 </div>
                                 <div class="col-md-12 home-form-card-band">
-                                    ciudadania virtual numero: <span id="id_citizen">{{ user_name }}</span>
+                                    ciudadania virtual numero: <span id="id_citizen">{{ request.user.username }}</span>
                                 </div>
                                 <div class="col-md-9 home-form-card-form">
                                     {% comment %}{{ user_profile_form }}{% endcomment %}
@@ -208,159 +364,8 @@
         </div>
     </div>
 </div>
-<div class="row push-down-90">
-    <div class="col-md-12">
-        <div id="map"></div>
-    </div>
-</div>
-<div class="row home-constructions-title">
-    <div class="container">
-        <div class="row ">
-            <div class="col-md-6">
-                <img src="{% static 'ghosttown/img/Seccion2-Title-construcciones.svg' %}" style="margin-top: 45px;margin-bottom: 45px;">
-            </div>
-            <div class="col-md-6">
 
-            </div>
-        </div>
-    </div>
-</div>
-<div class="row push-down-60">
-    <div class="container">
-        <div class="col-md-6">
-            <div class="row">
-                <img src="{% static 'ghosttown/img/Seccion3-Title-HonorablesC.svg' %}">
-            </div>
-            <div class="row home-avatars">
-                <div class="col-md-12">
-                    <div class="row push-down-30">
-                        {% for user_profile in user_profiles %}
-                            <div class="col-md-4">
-                                <img class="hexagon" src="{{ user_profile.hexagon_avatar }}">
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6">
-            <div class="row home-gallery">
-                {% for image in gallery %}
-                    <div class="col-md-4 thumb-home captionable">
-                        <img class="" src="{{ image.thumb_home }}" alt="{{ image.caption }}">
 
-                        <a data-toggle="modal" data-target="#myModal{{ image.id }}">
-                            <figcaption class="img-title">
-                                <h5>{{ image.caption }}</h5>
-                            </figcaption>
-                        </a>
-                    </div>
-                    <div class="modal fade modal-thumb-home" id="myModal{{ image.id }}" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                      <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                          <div class="modal-body">
-                            <img class="" src="{{ image.image.url }}" alt="{{ image.caption }}" width="100%">
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
 
-</div>
-<div class="row push-down-30">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12 home-separator"></div>
-        </div>
-    </div>
-</div>
 
-<div class="row push-down-30">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <img src="{% static 'ghosttown/img/Seccion4-Title-Ideologias.svg' %}">
-            </div>
-        </div>
-        <div class="row push-down-30">
-            <div class="col-md-12">
-                <p class="home-text-ideology">
-                    Cras auctor, arcu sed vulputate varius, nibh arcu laoreet risus, accumsan ullamcorper tortor tellus laoreet
-                    magna. Maecenas efficitur leo vel tellus iaculis pellentesque. Morbi dignissim tincidunt ipsum dapibus
-                    ullamcorper. Quisque ullamcorper vestibulum diam nec commodo. Maecenas pretium lacus et magna porttitor gravida.
-                    Phasellus imperdiet ligula lorem, eu porta enim laoreet a. Curabitur dignissim sit amet lectus tincidunt
-                    tristique. Ut elementum ac lectus eu aliquam. Aenean lectus metus, dictum ac convallis sit amet, laoreet quis
-                </p>
-            </div>
-        </div>
-        <div class="row push-down-60 home-themes">
-            <div class="col-md-3">
-                <div class="home-glass-image">
-                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-1.svg' %}">
-                </div>
-                <div class="home-theme-title">
-                    TEMA 1
-                </div>
-                <hr>
-                <p class="home-theme-text">
-                    Cras auctor, arcu sed
-                    vulputate varius, nibh
-                    arcu laoreet risus,
-                    accumsan ullamcorper
-                    tortor tellus laoreet.
-                </p>
-            </div>
-            <div class="col-md-3">
-                <div class="home-glass-image">
-                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-2.svg' %}">
-                </div>
-                <div class="home-theme-title">
-                    TEMA 2
-                </div>
-                <hr>
-                <p class="home-theme-text">
-                    Cras auctor, arcu sed
-                    vulputate varius, nibh
-                    arcu laoreet risus,
-                    accumsan ullamcorper
-                    tortor tellus laoreet.
-                </p>
-            </div>
-            <div class="col-md-3 ">
-                <div class="home-glass-image">
-                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-3.svg' %}">
-                </div>
-                <div class="home-theme-title">
-                    TEMA 3
-                </div>
-                <hr>
-                <p class="home-theme-text">
-                    Cras auctor, arcu sed
-                    vulputate varius, nibh
-                    arcu laoreet risus,
-                    accumsan ullamcorper
-                    tortor tellus laoreet.
-                </p>
-            </div>
-            <div class="col-md-3">
-                <div class="home-glass-image">
-                    <img src="{% static 'ghosttown/img/Seccion4-IconExample-4.svg' %}">
-                </div>
-                <div class="home-theme-title">
-                    TEMA 4
-                </div>
-                <hr>
-                <p class="home-theme-text">
-                    Cras auctor, arcu sed
-                    vulputate varius, nibh
-                    arcu laoreet risus,
-                    accumsan ullamcorper
-                    tortor tellus laoreet.
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
+
