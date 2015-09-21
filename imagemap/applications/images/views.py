@@ -42,7 +42,7 @@ def index_view(request):
                 password = request.POST.get('password1')
                 user = authenticate(username=username, password=password)
                 login(request, user)
-                user_profile_form = UserProfileCreationForm(instance=user_profile_form.instance)
+                return HttpResponseRedirect(reverse('image_map_view'))
             data["user_profile_form"] = user_profile_form
         elif form_name == 'login_form':
             print request.POST
@@ -54,7 +54,7 @@ def index_view(request):
                     request.session.set_expiry(0)
                 login(request, login_form.get_user())
                 print request.user
-                return HttpResponseRedirect(reverse('index'))
+                return HttpResponseRedirect(reverse('image_map_view'))
             data["login_form"] = login_form
 
     data["gallery"] = Images.objects.filter(is_active=True)
@@ -70,9 +70,9 @@ def image_map_view(request):
     data = dict()
     user_profile = UserProfile.objects.get(user__id=request.user.id)
     try:
-        mark = UploadedImages.objects.latest('created')
+        mark = UploadedImages.objects.filter(user_profile=user_profile).order_by('-id')[0]
         map_form = AddMarkForm(instance=mark)
-    except UploadedImages.DoesNotExist:
+    except IndexError:
         map_form = AddMarkForm()
 
     if request.method == 'POST':

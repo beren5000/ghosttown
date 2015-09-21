@@ -25,7 +25,7 @@ function initMap() {
     });
     var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
     {% for mark in marks %}
-        var contentString{{ forloop.counter }} = '<img src="{{ mark.image.url }}" width="10px">';
+        var contentString{{ forloop.counter }} = '<img src="{{ mark.thumb_map }}" width="100px">';
         var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
             content: contentString{{ forloop.counter }}
           });
