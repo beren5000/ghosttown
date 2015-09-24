@@ -68,8 +68,7 @@ class UserProfile(Master):
     def hexagon_avatar(self):
         if self.avatar:
             return self.show_thumb(150, 150)
-        rand = str(randint(1,4))
-        return settings.STATIC_URL+"ghosttown/img/Seccion4-IconExample-"+rand+".svg"
+        return settings.STATIC_URL+"ghosttown/img/fantasma-usuario-46.svg"
 
 
     @property

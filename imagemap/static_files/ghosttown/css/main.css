@@ -69,6 +69,13 @@ font-family: 'Noto Sans', sans-serif;
 
 }
 
+.background_hexagon_build{
+
+    background: url("../img/assets2-41.svg");
+    height: 150px;
+
+}
+
 .home-help-title{
     font-family: 'Share Tech Mono' ;
     font-size: 18pt;
@@ -452,4 +459,23 @@ font-family: 'Noto Sans', sans-serif;
     width: 90%;
     padding-top: 5px;
     padding-bottom: 5px;
+}
+
+h6{
+    font-size: 100px;
+}
+
+.text-building{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 25px;
+
+}
+
+.form-spaces{
+
+}
+
+.form-spaces div {
+    height: 300px;
+    background-color: #D3A682;
 }

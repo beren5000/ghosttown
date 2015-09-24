@@ -64,10 +64,18 @@ def index_view(request):
                               data,
                               context_instance=RequestContext(request))
 
+
 @login_required
 def image_map_view(request):
     data = dict()
     user_profile = UserProfile.objects.get(user__id=request.user.id)
+
+    if request.user.is_authenticated():
+        user_profile = UserProfile.objects.get(user__id=request.user.id)
+        user_name = user_profile.user.username
+        data["user_profile_form"] = UserProfileCreationForm(instance=user_profile)
+        data["user_name"] = user_name
+
     try:
         mark = UploadedImages.objects.filter(user_profile=user_profile).order_by('-id')[0]
         map_form = AddMarkForm(instance=mark)

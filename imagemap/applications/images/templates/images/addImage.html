@@ -5,6 +5,159 @@
 {% block title %}Republica de los Fantasmas{% endblock %}
 
 {% block content %}
+    <div class="row background_hexagon_build">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <img src="{% static 'ghosttown/img/' %}" style="height: 150px;">
+                    <hr class="hr-citizenship">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="row text-building">
+                <div class="col-md-1">
+                    <h6>1</h6>
+                </div>
+                <div class="col-md-5">
+                    Ciudadano fantasma:<br><br>
+                    <p>Recuerda guardar tu número de
+                    identidad indicado en la banda dorada
+                    de tu ciudadanía, es tu acceso a la
+                    república.</p>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 form-spaces "><div></div></div>
+                <form id="registerForm" method="post" enctype='multipart/form-data' action="{% url 'index' %}"
+                      class="form">
+                    <div class="col-md-6">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="row home-form-card">
+                                    <div class="col-md-12 home-form-card-title ">
+                                        republica de los fantasmas
+                                    </div>
+                                    <img src="{% static 'ghosttown/img/assets2-44.svg' %}"
+                                         style="width: 400px;padding-right: 20px;padding-left: 20px;">
+
+                                    <div class="col-md-12 home-form-card-sub-title">
+                                        identificación personal
+                                    </div>
+                                    <div class="col-md-12 home-form-card-band">
+                                        ciudadania virtual numero: <span
+                                            id="id_citizen">{{ request.user.username }}</span>
+                                    </div>
+                                    <div class="col-md-9 home-form-card-form">
+                                        {% comment %}{{ user_profile_form }}{% endcomment %}
+                                        <div class="row push-down-10">
+                                            <div class="col-md-6">
+                                                <label data-toggle="tooltip" data-placement="top"
+                                                       title="{{ user_profile_form.first_names.errors.as_text }}"
+                                                       for="id_first_names">Nombres:</label>
+                                                {% if user.is_authenticated %}
+                                                    {{ user_profile_form.instance.first_name }}
+                                                {% else %}
+                                                    {{ user_profile_form.first_names }}
+                                                {% endif %}
+                                                <hr>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label data-toggle="tooltip" data-placement="top"
+                                                       title="{{ user_profile_form.last_names.errors.as_text }}"
+                                                       for="id_last_names">Apellidos:</label>
+                                                {% if user.is_authenticated %}
+                                                    {{ user_profile_form.instance.last_name }}
+                                                {% else %}
+                                                    {{ user_profile_form.last_names }}
+                                                {% endif %}
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        {% if not user.is_authenticated %}
+                                            <div class="row push-down-10">
+                                                <div class="col-md-6">
+                                                    <label data-toggle="tooltip" data-placement="top"
+                                                           title="{{ user_profile_form.password1.errors.as_text }}"
+                                                           for="id_password1">Contraseña:</label>
+                                                    {{ user_profile_form.password1 }}
+                                                    <hr>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <label data-toggle="tooltip" data-placement="top"
+                                                           title="{{ user_profile_form.password2.errors.as_text }}"
+                                                           for="id_password2">Confirmar:</label>
+                                                    {{ user_profile_form.password2 }}
+                                                    <hr>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                        <div class="row push-down-10">
+                                            <div class="col-md-6">
+                                                <label data-toggle="tooltip" data-placement="top"
+                                                       title="{{ user_profile_form.birth_date.errors.as_text }}"
+                                                       for="id_birth_date">Cumpleaños:</label>
+                                                {% if user.is_authenticated %}
+                                                    {{ user_profile_form.instance.birth_date }}
+                                                {% else %}
+                                                    {{ user_profile_form.birth_date }}
+                                                {% endif %}
+                                                <hr>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label data-toggle="tooltip" data-placement="top"
+                                                       title="{{ user_profile_form.gender.errors.as_text }}"
+                                                       for="id_gender">Genero:</label>
+                                                {% if user.is_authenticated %}
+                                                    {{ user_profile_form.instance.gender_unicode }}
+                                                {% else %}
+                                                    {{ user_profile_form.gender }}
+                                                {% endif %}
+                                                <hr>
+                                            </div>
+                                        </div>
+                                        <div class="row push-down-10">
+                                            <div class="col-md-12">
+                                                <label data-toggle="tooltip" data-placement="top"
+                                                       title="{{ user_profile_form.email.errors.as_text }}"
+                                                       for="id_email">E-Mail:</label>
+                                                {% if user.is_authenticated %}
+                                                    {{ user_profile_form.instance.email }}
+                                                {% else %}
+                                                    {{ user_profile_form.email }}
+                                                {% endif %}
+                                                <hr>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 home-form-card-form">
+                                        <label id="label_avatar" data-toggle="tooltip" data-placement="top"
+                                               title="{{ user_profile_form.avatar.errors.as_text }}" for="id_avatar">avatar:</label>
+                                        {% if user.is_authenticated %}
+                                            <img id="imagePreview"
+                                                 src="{{ user_profile_form.instance.hexagon_avatar }}">
+                                        {% else %}
+                                            <div id="imagePreview"></div>
+                                            {{ user_profile_form.avatar }}
+                                        {% endif %}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="col-md-3 form-spaces"><div></div></div>
+            </div>
+        </div>
+    </div>
 
     <form id="addMarkForm" method="post" enctype='multipart/form-data' action="{% url 'image_map_view' %}" class="form">
         {% csrf_token %}
@@ -20,14 +173,14 @@
 
 {% block extra_js %}
     <script type="text/javascript">
-(function($){
-        $(window).load(function(){
-            /*$(".home-gallery").mCustomScrollbar({theme:'inset-dark'});*/
+        (function ($) {
+            $(window).load(function () {
+                /*$(".home-gallery").mCustomScrollbar({theme:'inset-dark'});*/
+            });
+        })(jQuery);
+        $(document).ready(function () {
+
+
         });
-    })(jQuery);
-$(document).ready( function() {
-
-
-});
     </script>
 {% endblock %}
