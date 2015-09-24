@@ -21,10 +21,11 @@
     <!-- end: CSS REQUIRED FOR THIS PAGE ONLY -->
 
 </head>
-<body>
+<body data-spy="scroll" data-target="#nav" data-offset="70">
 
     <!-- start: NAVIGATION BAR -->
     {% block navbar %}
+        {% include  'sections/navbar.html' %}
     {% endblock %}
     <!-- end: NAVIGATION BAR -->
 

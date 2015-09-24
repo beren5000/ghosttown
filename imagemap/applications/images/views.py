@@ -57,7 +57,6 @@ def index_view(request):
                 return HttpResponseRedirect(reverse('image_map_view'))
             data["login_form"] = login_form
 
-    data["gallery"] = Images.objects.filter(is_active=True)
     data["marks"] = UploadedImages.objects.filter(is_active=True)
     data["user_profiles"] = UserProfile.objects.filter(is_active=True)
 

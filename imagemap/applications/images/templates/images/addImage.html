@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 {% load i18n %}
 {% load staticfiles %}
+{% load bootstrap3 %}
 {% block title %}Republica de los Fantasmas{% endblock %}
 
 {% block content %}
-    {% include  'images/sections/_addImageMap.html' %}
+
+    <form id="addMarkForm" method="post" enctype='multipart/form-data' action="{% url 'image_map_view' %}" class="form">
+        {% csrf_token %}
+        {{ map_form.media }}
+        {{ map_form }}
+        <button id="btn-send-my-request" type="submit" class="">ENVIAR MI SOLICITUD</button>
+    </form>
 {% endblock %}
 
 {% block footer %}

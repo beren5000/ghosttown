@@ -1,8 +1,2 @@
 {% load staticfiles %}
-{% load bootstrap3 %}
-<form id="addMarkForm" method="post" enctype='multipart/form-data' action="{% url 'image_map_view' %}" class="form">
-    {% csrf_token %}
-    {{ map_form.media }}
-    {{ map_form }}
-    <button id="btn-send-my-request" type="submit" class="">ENVIAR MI SOLICITUD</button>
-</form>
+

@@ -5,11 +5,68 @@ font-family: 'Share Tech Mono', ;
 font-family: 'IM Fell Great Primer SC', serif;
 
 font-family: 'Montserrat', sans-serif;
+
+font-family: 'Noto Sans', sans-serif;
+
 */
+
+#home-logo{
+    top: 40px;
+    z-index: 1;
+    position: absolute;
+}
+
+.text-header{
+    text-align: right;
+    color: #FFFFFF;
+    font-family: 'Noto Sans', sans-serif;
+    top: 25px;
+}
+
+#nav.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar-default {
+    border: none;
+    border-radius: 0;
+    background: #E3E3DD none;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+     border: none;
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.active>a:hover{
+        box-shadow: none;
+        background: #D3A682 none;
+        text-shadow: none;
+        border-radius: 20px;
+        height: 25px;
+        padding-top: 2px;
+        margin-top: 13px;
+}
+
+.center-col{
+    float: none;
+    margin: 0 auto;
+    display: inline-table;
+}
+
 .background_hexagon_header{
+    height: 110px;
+    background: #83867E url("../img/assets2-41.svg");
+}
+
+.background_hexagon_header2{
+
     background: url("../img/Home-Header-Hexagons.svg");
     height: 150px;
     background-color: #E3E3DD;
+
 }
 
 .home-help-title{
@@ -31,6 +88,7 @@ font-family: 'Montserrat', sans-serif;
     border-color: #5E615C ;
     border-width: 3px;
     height: 300px;
+    text-align: center;
 }
 
 .home-form-card-title{
@@ -39,7 +97,7 @@ font-family: 'Montserrat', sans-serif;
     color: #5E615C;
     text-transform: uppercase;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 10px;
 }
 
 .home-form-card-sub-title{
@@ -167,6 +225,10 @@ font-family: 'Montserrat', sans-serif;
     margin-top: 90px;
 }
 
+.push-down-140 {
+    margin-top: 140px;
+}
+
 #btn-build{
     color: #ffffff;
     margin-top: 55px;
@@ -265,13 +327,34 @@ font-family: 'Montserrat', sans-serif;
 	border-radius: 6px;
 }
 
+.home-avatars{
+    overflow-y: scroll;
+}
+
+.home-avatars::-webkit-scrollbar-track
+{
+	background-color: #ffffff;
+}
+
+.home-avatars::-webkit-scrollbar
+{
+	width: 10px;
+	background-color: #F5F5F5;
+}
+
+.home-avatars::-webkit-scrollbar-thumb
+{
+	background-color: #bababa;
+	border-radius: 6px;
+}
+
 .home-separator{
     height: 100px;
     background-color: #E3E3DD;
 }
 
 .home-text-ideology{
-    font-family: 'Share Tech Mono', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #5E615C;
     padding: 10px;
     font-size: 14pt;
@@ -279,7 +362,7 @@ font-family: 'Montserrat', sans-serif;
 }
 
 .home-themes{
-    font-family: 'Share Tech Mono', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #5E615C;
 }
 
@@ -302,6 +385,13 @@ font-family: 'Montserrat', sans-serif;
     border-top: 3px solid #eee;
 }
 
+.hr-citizenship{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: 0;
+    border-top: 3px solid #A0A0A0;
+}
+
 .sponsors{
     border-top-color: #E3E3DD;
     border-top-width: 5pt;
@@ -321,6 +411,7 @@ font-family: 'Montserrat', sans-serif;
     position: relative;
     display: inline;
     vertical-align: middle;
+    width: 100%;
 }
 
 .footer{
