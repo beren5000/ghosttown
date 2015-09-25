@@ -85,14 +85,14 @@ body {
 }
 
 .home-help-title{
-    font-family: 'Share Tech Mono' ;
+    font-family: 'Noto Sans', sans-serif ;
     font-size: 18pt;
     color: #8C7B74;
     text-align: right;
 }
 
 .home-help-text{
-    font-family: 'Share Tech Mono' ;
+    font-family: 'Noto Sans', sans-serif ;
     font-size: 15pt;
     color:  #5E615C;
     text-align: right;
