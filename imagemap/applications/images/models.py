@@ -44,6 +44,13 @@ class UploadedImages(Master):
         rand = str(randint(1, 4))
         return settings.STATIC_URL+"ghosttown/img/Seccion4-IconExample-"+rand+".svg"
 
+    @property
+    def thumb_contributors(self):
+        if self.image:
+            return self.image.url
+        rand = str(randint(1, 4))
+        return settings.STATIC_URL+"ghosttown/img/Seccion4-IconExample-"+rand+".svg"
+
 
 # function to return the correct UPLOAD_TO variable for the image field.
 # All the images are storage in the folder with the name of the book
