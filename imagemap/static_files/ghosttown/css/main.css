@@ -89,10 +89,12 @@ body {
     font-size: 18pt;
     color: #8C7B74;
     text-align: right;
+    font-weight: bold;
 }
 
 .home-help-text{
     font-family: 'Noto Sans', sans-serif ;
+    font-weight: bold;
     font-size: 15pt;
     color:  #5E615C;
     text-align: right;
@@ -107,7 +109,7 @@ body {
 }
 
 .home-form-card-title{
-    font-family: 'IM Fell Great Primer SC', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 20pt;
     color: #5E615C;
     text-transform: uppercase;
@@ -116,7 +118,7 @@ body {
 }
 
 .home-form-card-sub-title{
-    font-family: 'IM Fell Great Primer SC', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 15pt;
     color: #5E615C;
     text-transform: uppercase;
@@ -124,7 +126,7 @@ body {
 }
 
 .home-form-card-band{
-    font-family: 'IM Fell Great Primer SC', serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 15pt;
     color: #8C7B74;
     background-color:  #D3A682;
@@ -133,7 +135,7 @@ body {
 }
 
 .home-form-card-form{
-    font-family: 'IM Fell Great Primer SC', serif;
+    font-family: 'Noto Sans', sans-serif;
     color: #5E615C;
 }
 
