@@ -9,7 +9,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <img src="{% static 'ghosttown/img/' %}" style="height: 150px;">
+                    <img src="{% static 'ghosttown/img/assetss-43.svg' %}" style="height: 150px;">
                     <hr class="hr-citizenship">
                 </div>
             </div>
@@ -17,12 +17,22 @@
     </div>
     <div class="row">
         <div class="container">
-            <div class="row text-building">
+            <div class="row text-building push-down-30">
                 <div class="col-md-1">
-                    <h6>1</h6>
+
                 </div>
                 <div class="col-md-5">
-                    Ciudadano fantasma:<br><br>
+                    Ciudadano fantasma:<br>
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <div class="row text-building push-down-30">
+                <div class="col-md-1">
+                    <img src="{% static 'ghosttown/img/assetss-47.svg' %}"style="margin-top: 45px;width: 35px;">
+                </div>
+                <div class="col-md-5">
                     <p>Recuerda guardar tu número de
                     identidad indicado en la banda dorada
                     de tu ciudadanía, es tu acceso a la
@@ -32,7 +42,7 @@
             </div>
         </div>
     </div>
-    <div class="row">
+    <div class="row push-down-30">
         <div class="container">
             <div class="row">
                 <div class="col-md-3 form-spaces "><div></div></div>
@@ -158,13 +168,71 @@
             </div>
         </div>
     </div>
+    <div class="row push-down-30">
+        <div class="container">
+            <div class="row text-building">
+                <div class="col-md-1">
+                    <img src="{% static 'ghosttown/img/assetss-48.svg' %}">
+                </div>
+                <div class="col-md-6">
+                    Colabora en la construcción de nuestra
+                    República. Descarga las guías para crear
+                    la maqueta / estructura de tu República
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+            <div class="row push-down-30">
+                <div class="col-md-1">
 
-    <form id="addMarkForm" method="post" enctype='multipart/form-data' action="{% url 'image_map_view' %}" class="form">
-        {% csrf_token %}
-        {{ map_form.media }}
-        {{ map_form }}
-        <button id="btn-send-my-request" type="submit" class="">ENVIAR MI SOLICITUD</button>
-    </form>
+                </div>
+                <div class="col-md-5">
+                    <a href="{% static 'ghosttown/corregida-instrucciones-republica-web.pdf' %}"><button id="btn-download" type="button" class=""> <img src="{% static 'ghosttown/img/assetss-46.svg' %}" style="width: 55px;margin-right: 35px;"> DESCARGA EL ARCHIVO</button></a>
+                </div>
+                <div class="col-md-6"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row push-down-30">
+        <div class="container">
+            <div class="row text-building">
+                <div class="col-md-1">
+                    <img src="{% static 'ghosttown/img/assetss-49.svg' %}"style="margin-top: 10px;">
+                </div>
+                <div class="col-md-5">
+                    Elabora tu estructura, toma una foto,
+                    sube la imagen y posicionala en el mapa
+                    aquí:
+                </div>
+                <div class="col-md-6">
+
+                </div>
+            </div>
+            <form id="addMarkForm" method="post" enctype='multipart/form-data' action="{% url 'image_map_view' %}" class="form">
+                <div class="row text-building push-down-60">
+                    <div class="col-md-1"></div>
+                    <div class="col-md-11" >
+
+                            {% csrf_token %}
+                            {{ map_form.media }}
+                            {% if map_form.instance.image %}
+                                <img id="imagePreview" src="{{ map_form.instance.image.url }}">
+                            {% endif %}
+                            {{ map_form }}
+
+                    </div>
+                </div>
+                <div class="row push-down-30">
+                    <div class="col-md-offset-4 col-md-4">
+                        <button id="btn-send-my-request" type="submit" class="">FINALIZAR</button>
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
 {% endblock %}
 
 {% block footer %}
@@ -179,7 +247,12 @@
             });
         })(jQuery);
         $(document).ready(function () {
-
+            $("#addMarkForm > div.row.text-building.push-down-60 > div.col-md-11 > label:nth-child(6)").hide();
+            $('#addMarkForm > div.row.text-building.push-down-60 > div.col-md-11 > div > table > tbody > tr:nth-child(1)').hide();
+            $('#addMarkForm > div.row.text-building.push-down-60 > div.col-md-11 > div > table > tbody > tr:nth-child(2)').hide();
+            $("label[for='id_position_0']").hide();
+            $("label[for='id_image']").hide();
+            $("#addMarkForm > div.row.text-building.push-down-60 > div.col-md-11 > a").hide();
 
         });
     </script>

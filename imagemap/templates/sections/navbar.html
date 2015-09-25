@@ -1,7 +1,6 @@
 {% load staticfiles %}
 
-
-<nav id="nav" class="navbar navbar-default"  data-spy="affix" data-offset-top="{% if request.path == "/building/" %}0{% else %}600{% endif %}">
+<nav id="xnav" class="navbar navbar-default"  data-spy="affix" data-offset-top="{% if request.path == "/building/" %}0{% else %}600{% endif %}">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
@@ -16,36 +15,14 @@
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{% if request.path == "/building/" %}
-                                {% url 'index' %}
-                                {% else %}
-                                #republic
-                                {% endif %}">
-                        La República</a></li>
-                <li><a href="{% if request.path == "/building/" %}
-                                {% url 'index' %}
-                                {% else %}
-                                #ideology
-                                {% endif %}">Ideologías</a></li>
-                <li><a href="{% if request.path == "/building/" %}
-                                {% url 'index' %}
-                                {% else %}
-                                #contributors
-                                {% endif %}">Contribuyentes</a></li>
-                <li><a href="{% if request.path == "/building/" %}
-                                {% url 'index' %}
-                                {% else %}
-                                #citizenship
-                                {% endif %}">Ciudadanía</a></li>
+        <div class="collapse navbar-collapse" id="xnavspy">
+            <ul class="nav navbar-nav navbar-right" role="tablist">
+                <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#republic{% endif %}">La República</a></li>
+                <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#ideology{% endif %}">Ideologías</a></li>
+                <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#contributors{% endif %}">Contribuyentes</a></li>
+                <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#citizenship{% endif %}">Ciudadanía</a></li>
                 {% if request.user.is_authenticated %}
-                    <li><a href="{% if request.path == "/building/" %}
-                                #building
-                                {% else %}
-                                {% url 'image_map_view' %}
-                                {% endif %}">Construye</a></li>
+                    <li><a href="{% if request.path == "/building/" %}#building{% else %}{% url 'image_map_view' %}{% endif %}">Construye</a></li>
                 {% endif %}
             </ul>
         </div>

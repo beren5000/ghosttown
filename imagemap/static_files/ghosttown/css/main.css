@@ -10,6 +10,10 @@ font-family: 'Noto Sans', sans-serif;
 
 */
 
+body {
+  position: relative;
+}
+
 #home-logo{
     top: 40px;
     z-index: 1;
@@ -23,7 +27,7 @@ font-family: 'Noto Sans', sans-serif;
     top: 25px;
 }
 
-#nav.affix {
+#xnav.affix {
     position: fixed;
     top: 0;
     width: 100%;
@@ -40,7 +44,11 @@ font-family: 'Noto Sans', sans-serif;
      border: none;
 }
 
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover,.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.active>a:hover{
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.open>a{
         box-shadow: none;
         background: #D3A682 none;
         text-shadow: none;
@@ -396,7 +404,8 @@ font-family: 'Noto Sans', sans-serif;
     margin-top: 5px;
     margin-bottom: 5px;
     border: 0;
-    border-top: 3px solid #A0A0A0;
+    border-radius: 10px;
+    border-top: 5px solid #DADADA;
 }
 
 .sponsors{
@@ -466,9 +475,10 @@ h6{
 }
 
 .text-building{
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
     font-size: 25px;
-
+    color: #5D5D5D;
 }
 
 .form-spaces{
@@ -477,5 +487,28 @@ h6{
 
 .form-spaces div {
     height: 300px;
-    background-color: #D3A682;
+    background-image: url("../img/assetss-45.svg");
+}
+
+#btn-download{
+    float: left;
+    border: 0;
+    color: #FFFFFF;
+    border-radius: 0;
+    width: 540px;
+    height: 100px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15pt;
+    background-color: #B0B5C5;
+}
+
+.geoposition-map{
+    border: 10px solid #DDCDB0;
+}
+
+.geoposition-search{
+        font-size: 15pt;
+}
+.geoposition-address{
+        font-size: 15pt;
 }
