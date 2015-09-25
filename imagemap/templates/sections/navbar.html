@@ -22,7 +22,7 @@
                 <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#contributors{% endif %}">Contribuyentes</a></li>
                 <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#citizenship{% endif %}">Ciudadanía</a></li>
                 {% if request.user.is_authenticated %}
-                    <li><a href="{% if request.path == "/building/" %}#building{% else %}{% url 'image_map_view' %}{% endif %}">Construye</a></li>
+                    <li class="btn-build-active"><a href="{% if request.path == "/building/" %}#building{% else %}{% url 'image_map_view' %}{% endif %}">Construye</a></li>
                 {% endif %}
             </ul>
         </div>
