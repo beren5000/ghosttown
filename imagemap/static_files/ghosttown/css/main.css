@@ -332,11 +332,23 @@ body {
 
 @media screen and (min-width: 768px) {
 
-	.modal-thumb-home .modal-dialog  {width:900px;}
+	.modal-thumb-home .modal-dialog  {display: inline-block;
+        text-align: center;
+
+    }
 
 }
 
-.modal-thumb-home .modal-dialog  {width:80%;}
+.modal-thumb-home .modal-dialog  {
+    display: inline-block;
+    text-align: center;
+
+}
+
+.modal-thumb-home {
+    text-align: center;
+    max-height: 90vh;
+}
 
 .modal-content {border-radius: 0px;}
 
