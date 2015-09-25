@@ -126,6 +126,7 @@ body {
 
 .home-form-card-title{
     font-family: 'Noto Sans', sans-serif;
+    font-weight: bold;
     font-size: 20pt;
     color: #5E615C;
     text-transform: uppercase;
