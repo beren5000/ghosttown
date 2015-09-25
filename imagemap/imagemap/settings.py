@@ -127,8 +127,8 @@ mimetypes.add_type("image/svg+xml", ".svg", True)
 mimetypes.add_type("image/svg+xml", ".svgz", True)
 
 GEOPOSITION_MAP_OPTIONS = {
-    'center': {'lat': 3.4511595, 'lng': -76.5145283},
-    'zoom': 13,
+    'center': {'lat': 3.2016197, 'lng': -76.4026165},
+    'zoom': 16,
 }
 
 GEOPOSITION_MARKER_OPTIONS = {
