@@ -14,6 +14,7 @@
                 <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#ideology{% endif %}">Ideologías</a></li>
                 <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#contributors{% endif %}">Contribuyentes</a></li>
                 <li><a href="{% if request.path == "/building/" %}{% url 'index' %}{% else %}#citizenship{% endif %}">Ciudadanía</a></li>
+                <li><a href="http://blog.republicadelosfantasmas.co/">Blog</a></li>
                 {% if request.user.is_authenticated %}
                     <li class="btn-build-active"><a href="{% if request.path == "/building/" %}#building{% else %}{% url 'image_map_view' %}{% endif %}">Construye</a></li>
                 {% endif %}
