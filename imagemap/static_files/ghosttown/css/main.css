@@ -88,9 +88,8 @@ body {
 
 .background_hexagon_header2{
 
-    background: url("../img/Home-Header-Hexagons.svg");
     height: 150px;
-    background-color: #E3E3DD;
+    background: #E3E3DD url("../img/Home-Header-Hexagons.svg");
 
 }
 
@@ -117,9 +116,8 @@ body {
 }
 
 .home-form-card{
-    border-style: solid;
-    border-color: #5E615C ;
-    border-width: 3px;
+
+    border: 3px solid #5E615C;
     height: 300px;
     text-align: center;
 }
@@ -351,7 +349,7 @@ body {
     text-align: center;
 }
 
-.modal-content {border-radius: 0px;}
+.modal-content {border-radius: 0;}
 
 .home-gallery{
     margin-top: -15px;
@@ -443,9 +441,7 @@ body {
 }
 
 .sponsors{
-    border-top-color: #E3E3DD;
-    border-top-width: 5pt;
-    border-top-style: solid;
+    border-top: 5pt solid #E3E3DD;
     color:#5E615C;
     font-family: 'Noto Sans', sans-serif;
     font-size: 18pt;
@@ -466,12 +462,8 @@ body {
 
 .footer{
     background-color: #5E615C;
-    border-top-color: #E3E3DD;
-    border-top-width: 5pt;
-    border-top-style: solid;
-    border-bottom-color: #E3E3DD;
-    border-bottom-width: 10pt;
-    border-bottom-style: solid;
+    border-top: 5pt solid #E3E3DD;
+    border-bottom: 10pt solid #E3E3DD;
 }
 
 .footer-contact{
@@ -545,4 +537,31 @@ h6{
 }
 .geoposition-address{
         font-size: 15pt;
+}
+
+
+
+/*NO RESPONSIVE*/
+.container2{
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: 1150px !important;
+}
+
+.navbar-collapse.collapse {
+display: block!important;
+}
+
+.navbar-nav>li, .navbar-nav {
+float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+margin-right: -15px !important;
+}
+
+.navbar-right {
+float: right!important;
 }
