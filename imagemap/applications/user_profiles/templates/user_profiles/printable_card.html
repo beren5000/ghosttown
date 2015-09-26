@@ -4,7 +4,15 @@
 {% load staticfiles %}
 {% load bootstrap3 %}
 {% block title %}Republica de los Fantasmas{% endblock %}
+{% block extra_css %}
+    <style>
+        .home-form-card-band {
+            background-color:  #D3A682;
+            -webkit-print-color-adjust: exact;
+        }
 
+    </style>
+{% endblock %}
 {% block navbar %}
 {% endblock %}
 
@@ -129,4 +137,14 @@
 {% endblock %}
 
 {% block footer %}
+{% endblock %}
+{% block extra_js %}
+
+    <script>
+    $(document).ready(function () {
+        window.print();
+    });
+    </script>
+
+
 {% endblock %}

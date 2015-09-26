@@ -32,4 +32,4 @@ MEDIA_URL = 'http://www.republicadelosfantasmas.co/media/'
 STATIC_ROOT = '/home/beren5000/webapps/ghosttown_static'
 STATIC_URL = 'http://www.republicadelosfantasmas.co/static/'
 
-DEBUG = True
+DEBUG = False

@@ -89,6 +89,7 @@ def image_map_view(request):
             mark.user_profile = user_profile
             mark.save()
             map_form = AddMarkForm(instance=mark)
+            return HttpResponseRedirect(reverse('index'))
 
     data["map_form"] = map_form
     return render_to_response('images/addImage.html',

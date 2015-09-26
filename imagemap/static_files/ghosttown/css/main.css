@@ -323,7 +323,7 @@ body {
     width: 100%;
     height: 100%;
     text-align: center;
-    font-family: 'Share Tech Mono', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 12pt;
     padding: 30px;
 }
@@ -474,7 +474,7 @@ body {
 
 .footer-contact-text{
     display: table-cell !important;
-    font-family: 'Share Tech Mono', sans-serif;
+    font-family: 'Noto Sans', sans-serif;
     font-size: 14pt;
     color: #FFFFFF;
     vertical-align: middle;
@@ -539,7 +539,9 @@ h6{
         font-size: 15pt;
 }
 
-
+p {
+    font-weight: normal;
+}
 
 /*NO RESPONSIVE*/
 .container2{
@@ -565,3 +567,4 @@ margin-right: -15px !important;
 .navbar-right {
 float: right!important;
 }
+
