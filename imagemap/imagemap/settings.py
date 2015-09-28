@@ -132,5 +132,5 @@ GEOPOSITION_MAP_OPTIONS = {
 }
 
 GEOPOSITION_MARKER_OPTIONS = {
-    'position': {'lat': 3.4511595, 'lng': -76.5145283},
+    'position': {'lat': 3.2016197, 'lng': -76.4026165},
 }
