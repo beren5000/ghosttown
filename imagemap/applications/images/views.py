@@ -80,10 +80,14 @@ def image_map_view(request):
         mark = UploadedImages.objects.filter(user_profile=user_profile).order_by('-id')[0]
         map_form = AddMarkForm(instance=mark)
     except IndexError:
+        mark = False
         map_form = AddMarkForm()
 
     if request.method == 'POST':
-        map_form = AddMarkForm(request.POST, request.FILES)
+        if mark:
+            map_form = AddMarkForm(request.POST, request.FILES, instance=mark)
+        else:
+            map_form = AddMarkForm(request.POST, request.FILES)
         if map_form.is_valid():
             mark = map_form.save()
             mark.user_profile = user_profile
