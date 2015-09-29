@@ -14,6 +14,11 @@ body {
   position: relative;
 }
 
+#ui-datepicker-div{
+    top: 2703px!important;
+}
+
+
 #home-logo{
     top: 40px;
     z-index: 1;
