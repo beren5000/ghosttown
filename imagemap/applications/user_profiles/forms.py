@@ -57,6 +57,17 @@ class UserProfileCreationForm(forms.ModelForm):
             )
         return password2
 
+    def clean_email(self):
+        email = self.cleaned_data.get("email")
+        try:
+            User.objects.get(email=email)
+            raise forms.ValidationError(
+                self.error_messages['password_mismatch'],
+                code='password_mismatch',
+            )
+        except User.DoesNotExist, User.MultipleObjectsReturned:
+            return email
+
     def save(self, commit=True):
         user_profile = super(UserProfileCreationForm, self).save(commit=False)
         rand_username = randint(10000000, 999999999)
