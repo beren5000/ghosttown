@@ -12,7 +12,6 @@
     <div id="republic"></div>
     <div class="row background_hexagon_header">
         <div class="container2 ">
-
                 <div class="col-xs-5">
                     <img id="home-logo" src="{% static 'ghosttown/img/asset-new-logo-43-43.svg' %}">
                 </div>
@@ -398,8 +397,14 @@
                 </div>
                 <!--end home register card-->
             </div>
+            <div class="row push-down-60">
+                <div class="col-xs-12">
+                    <div class="fb-share-button" data-href="http://www.republicadelosfantasmas.co/" data-layout="button_count" style="float:right;"></div>
+                </div>
+            </div>
         </div>
     </div>
+
 
 {% endblock %}
 
@@ -419,7 +424,7 @@
                 center: {lat: 3.2016197, lng: -76.4026165},
                 zoom: 16
             });
-            var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
+            var iconBase = '{% static "ghosttown/img/icons/icono-mapa.png" %}';
             {% for mark in marks %}
                 var contentString{{ forloop.counter }} = '<img src="{{ mark.thumb_map }}" width="100px">';
                 var infowindow{{ forloop.counter }} = new google.maps.InfoWindow({
@@ -431,7 +436,7 @@
                         lng: {{ mark.position.longitude|unlocalize }}
                     },
                     map: map,
-                    icon: iconBase + 'schools_maps.png',
+                    icon: iconBase,
                     title: 'Hello World!'
                 });
 

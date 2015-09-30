@@ -14,6 +14,12 @@ body {
   position: relative;
 }
 
+.fb-share-button.fb_iframe_widget > span > iframe {
+    width: 200px !important;
+    height: 30px !important;
+}
+
+
 #ui-datepicker-div{
     top: 2987px!important;
 }
