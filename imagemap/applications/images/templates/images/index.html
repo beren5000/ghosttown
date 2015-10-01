@@ -436,13 +436,13 @@
                         lng: {{ mark.position.longitude|unlocalize }}
                     },
                     map: map,
-                    icon: iconBase,
-                    title: 'Hello World!'
+                    icon: iconBase
                 });
 
-                marker{{ forloop.counter }}.addListener('mouseover', function () {
+                marker{{ forloop.counter }}.addListener('click', function () {
                     infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
                 });
+                infowindow{{ forloop.counter }}.open(map, marker{{ forloop.counter }});
 
             {% endfor %}
         }
