@@ -482,12 +482,19 @@
 
             //for avatar
             $(function () {
-                $("#id_birth_date").datepicker({
+                $("#id_birth_date").pickadate({
+                    format: 'yyyy-mm-dd',
+                    formatSubmit: 'yyyy-mm-dd',
+                    selectYears: true,
+                    selectMonths: true,
+                    selectYears: 100
+                });
+                {% comment %}$("#id_birth_date").datepicker({
                     changeMonth: true,
                     changeYear: true,
                     dateFormat: 'yy-mm-dd',
                     yearRange: '1900:2040'
-                });
+                });{% endcomment %}
                 $("#id_avatar").hide();
                 $("#imagePreview").on('click', function () {
                     $("#id_avatar").click();

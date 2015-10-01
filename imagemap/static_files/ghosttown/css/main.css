@@ -24,6 +24,14 @@ body {
     top: 2987px!important;
 }
 
+.picker__select--month, .picker__select--year {
+    height: 3em!important;
+}
+
+.picker{
+    font-size: 13px!important;
+}
+
 
 #home-logo{
     top: 20px;
