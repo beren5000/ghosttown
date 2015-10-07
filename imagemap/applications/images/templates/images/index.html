@@ -16,9 +16,19 @@
                     <img id="home-logo" src="{% static 'ghosttown/img/asset-43.svg' %}">
                 </div>
                 <div class="col-xs-offset-3 col-xs-4 text-header">
-                    ¡Bienvenidos a este nuevo y posible mundo!
-                    Para el ingreso a nuestra República es importante
-                    tener presente tu numero de identidad
+                    <p>
+                        ¡Bienvenidos a este nuevo y posible mundo!
+                        Para el ingreso a nuestra República es importante
+                        tener presente tu numero de identidad
+                    </p>
+                    <div class="row"">
+                        {% if request.user.is_authenticated %}
+                        {% else %}
+                            <button id="btn-access" type="button" data-toggle="modal" data-target="#reg-modal" class="">accede</button>
+                            <a href="#citizenship"><button id="btn-inscription" class="">Inscríbete</button></a>
+                        {% endif %}
+                    </div>
+
                 </div>
 
         </div>
